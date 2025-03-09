@@ -107,7 +107,7 @@
                                         </button>
                                     </form>
                                     @if($user->getRoleNames()->contains('admin'))
-                                    <form action="" method="POST" style="display: inline;">
+                                    <form action="{{ route('user.revoke-admin', $user->id) }}" method="POST" style="display: inline;">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('آیا مطمئن هستید که این کاربر را از ادمینی حذف کنید؟')">
@@ -115,7 +115,7 @@
                                         </button>
                                     </form>
                                     @else
-                                        <form action="" method="POST" style="display: inline;">
+                                        <form action="{{ route('user.assign-admin', $user->id) }}" method="POST" style="display: inline;">
                                             @csrf
                                             <button type="submit" class="btn btn-sm btn-success" onclick="return confirm('آیا می‌خواهید این کاربر را ادمین کنید؟')">
                                                 <i class="fas fa-user-shield"></i> انتقال به ادمینی

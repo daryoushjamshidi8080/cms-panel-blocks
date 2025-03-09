@@ -5,7 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
-
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ForgetPasswordController;
 
 
@@ -17,6 +17,12 @@ Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashb
 Route::get('/user-manage', [UserController::class, 'manage'])->name('user.manage')->middleware('auth');
 Route::post('/user-manage', [UserController::class, 'managePost'])->name('user.manage.post')->middleware('auth');
 
+// Admin Route
+Route::middleware(['auth'])->group(function()
+ {
+    Route::post('/user/{user}/assign-admin', [AdminController::class, 'assignAdmin'])->name('user.assign-admin');
+    Route::delete('/user/{user}/revoke-admin', [AdminController::class, 'revokeAdmin'])->name('user.revoke-admin');
+ });
 
 // manage post
 Route::resource('/posts', PostController::class);
