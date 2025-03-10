@@ -22,6 +22,8 @@ Route::middleware(['auth'])->group(function()
  {
     Route::post('/user/{user}/assign-admin', [AdminController::class, 'assignAdmin'])->name('user.assign-admin');
     Route::delete('/user/{user}/revoke-admin', [AdminController::class, 'revokeAdmin'])->name('user.revoke-admin');
+    Route::delete('/user/{user}/revoke-user', [AdminController::class, 'revokeUser'])->name('user.revoke-user');
+
  });
 
 // manage post

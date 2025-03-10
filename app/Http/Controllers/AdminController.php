@@ -26,4 +26,13 @@ class AdminController extends Controller
 
         return redirect()->back()->with('success', 'Admin role revoked successfully.');
     }
+
+
+    public function revokeUser($userId)
+    {
+        $user = User::findOrFail($userId);
+        $user->delete();
+
+        return redirect()->back()->with('success', 'user  revoked successfully.');
+    }
 }
