@@ -12,11 +12,11 @@ class AuthController extends Controller
     public function register()
     {
         return view('auth.register');
- 
+
     }
 
 
-    
+
 
     public function registerPost(Request $request){
 
@@ -38,14 +38,15 @@ class AuthController extends Controller
         \Log::info('User registered successfully', ['user_info' => $user]);
 
 
-        
+
 
         if(!$user){
             return redirect()->back()->with('error', "Registeration failed, try again");
         };
 
 
-        
+        Auth::login($user);// Data is stored in the session and the user's cookie is also stored
+        $request->session()->regenerate();
         return redirect()->route('home')->with('success', "Registeration success, loign to access the app");
     }
 
@@ -75,12 +76,12 @@ class AuthController extends Controller
 
 
         $user = User::where('email',$request->email )->first();
-        
+
         if(!$user){
             return redirect()->back()->with('error', 'The selected email is invalid.');
         }
-        
-        
+
+
 
         if(!Hash::check($request->password, $user->password)){
             return  redirect()->back()->with('error', 'The Password entered is Wrong');
@@ -105,7 +106,7 @@ class AuthController extends Controller
         $request->session()->regenerateToken();
         return redirect()->route('home');
     }
-    
+
 }
 
 

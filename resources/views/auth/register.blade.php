@@ -18,7 +18,7 @@
                             <div>
                                 @if (session()->has('error'))
                                     <div>{{ session('error') }}</div>
-                                    
+
                                 @endif
                                 @if (session()->has('success'))
                                     <div> {{ session('success') }}</div>
@@ -39,30 +39,8 @@
 								</div>
 								<!--begin::Heading-->
 								<!--begin::Login options-->
-								<div class="row g-3 mb-9">
-									<!--begin::Col-->
-									<div class="col-md-6">
-										<!--begin::گوگل link=-->
-										<a href="#" class="btn btn-flex btn-outline btn-text-gray-700 btn-active-color-primary bg-state-light flex-center text-nowrap w-100">
-										<img alt="Logo" src="{{ asset('assets/auth/media/svg/brand-logos/google-icon.svg') }}" class="h-15px me-3" />ورود از طریق گوگل</a>
-										<!--end::گوگل link=-->
-									</div>
-									<!--end::Col-->
-									<!--begin::Col-->
-									<div class="col-md-6">
-										<!--begin::گوگل link=-->
-										<a href="#" class="btn btn-flex btn-outline btn-text-gray-700 btn-active-color-primary bg-state-light flex-center text-nowrap w-100">
-										<img alt="Logo" src="{{ asset('assets/auth/media/svg/brand-logos/apple-black.svg') }}" class="theme-light-show h-15px me-3" />
-										<img alt="Logo" src="{{ asset('assets/auth/media/svg/brand-logos/apple-black-dark.svg') }}" class="theme-dark-show h-15px me-3" />با اپلیکیشن وارد شوید</a>
-										<!--end::گوگل link=-->
-									</div>
-									<!--end::Col-->
-								</div>
 								<!--end::Login options-->
 								<!--begin::separator-->
-								<div class="separator separator-content my-14">
-									<span class="w-125px text-gray-500 fw-semibold fs-7">یا با ایمیل</span>
-								</div>
 								<!--end::separator-->
 								<!--begin::Input group=-->
                                 <div class="fv-row mb-8">
@@ -118,8 +96,8 @@
 								<div class="fv-row mb-8">
 									<label class="form-check form-check-inline">
 										<input class="form-check-input" type="checkbox" name="toc" value="1" />
-										<span class="form-check-label fw-semibold text-gray-700 fs-base ms-1">من قبول میکنم 
-										<a href="#" class="ms-1 link-primary">تیم ها</a></span>
+										<span class="form-check-label fw-semibold text-gray-700 fs-base ms-1">من قبول میکنم
+										<!-- <a href="#" class="ms-1 link-primary">تیم ها</a></span> -->
 									</label>
 								</div>
 								<!--end::Accept-->
@@ -130,15 +108,15 @@
 										<span class="indicator-label">ثبت نام</span>
 										<!--end::Indicatیا label-->
 										<!--begin::Indicatیا progress-->
-										<span class="indicator-progress">لطفا صبر کنید... 
+										<span class="indicator-progress">لطفا صبر کنید...
 										<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
 										<!--end::Indicatیا progress-->
 									</button>
 								</div>
 								<!--end::ثبت button-->
 								<!--begin::ثبت نام-->
-								<div class="text-gray-500 text-center fw-semibold fs-6">از قبل اکانت دارید 
-								<a href="authentication/layouts/corporate/sign-in.html" class="link-primary fw-semibold">ورود</a></div>
+								<div class="text-gray-500 text-center fw-semibold fs-6">از قبل اکانت دارید
+								<a href="{{ route('login') }}" class="link-primary fw-semibold">ورود</a></div>
 								<!--end::ثبت نام-->
 							</form>
 							<!--end::form-->
@@ -149,78 +127,9 @@
 					<!--begin::Footer-->
 					<div class="w-lg-500px d-flex flex-stack px-10 mx-auto">
 						<!--begin::زبانs-->
-						<div class="me-10">
-							<!--begin::Toggle-->
-							<button class="btn btn-flex btn-link btn-color-gray-700 btn-active-color-primary rotate fs-base" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" data-kt-menu-offset="0px, 0px">
-								<img data-kt-element="current-lang-flag" class="w-20px h-20px rounded me-3" src="{{ asset('assets/auth/media/flags/united-states.svg')}}" alt="" />
-								<span data-kt-element="current-lang-name" class="me-1">انگلیسی</span>
-								<span class="d-flex flex-center rotate-180">
-									<i class="ki-outline ki-down fs-5 text-muted m-0"></i>
-								</span>
-							</button>
-							<!--end::Toggle-->
-							<!--begin::Menu-->
-							<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold w-200px py-4 fs-7" data-kt-menu="true" id="kt_auth_lang_menu">
-								<!--begin::Menu item-->
-								<div class="menu-item px-3">
-									<a href="#" class="menu-link d-flex px-5" data-kt-lang="انگلیسی">
-										<span class="symbol symbol-20px me-4">
-											<img data-kt-element="lang-flag" class="rounded-1" src="{{ asset('assets/auth/media/flags/united-states.svg')}}" alt="" />
-										</span>
-										<span data-kt-element="lang-name">انگلیسی</span>
-									</a>
-								</div>
-								<!--end::Menu item-->
-								<!--begin::Menu item-->
-								<div class="menu-item px-3">
-									<a href="#" class="menu-link d-flex px-5" data-kt-lang="اسپانیایی">
-										<span class="symbol symbol-20px me-4">
-											<img data-kt-element="lang-flag" class="rounded-1" src="{{ asset('assets/auth/media/flags/spain.svg') }}" alt="" />
-										</span>
-										<span data-kt-element="lang-name">اسپانیایی</span>
-									</a>
-								</div>
-								<!--end::Menu item-->
-								<!--begin::Menu item-->
-								<div class="menu-item px-3">
-									<a href="#" class="menu-link d-flex px-5" data-kt-lang="آلمانی">
-										<span class="symbol symbol-20px me-4">
-											<img data-kt-element="lang-flag" class="rounded-1" src="{{ asset('assets/auth/media/flags/germany.svg') }}" alt="" />
-										</span>
-										<span data-kt-element="lang-name">آلمانی</span>
-									</a>
-								</div>
-								<!--end::Menu item-->
-								<!--begin::Menu item-->
-								<div class="menu-item px-3">
-									<a href="#" class="menu-link d-flex px-5" data-kt-lang="ژاپنی">
-										<span class="symbol symbol-20px me-4">
-											<img data-kt-element="lang-flag" class="rounded-1" src="{{ asset('assets/auth/media/flags/japan.svg') }}" alt="" />
-										</span>
-										<span data-kt-element="lang-name">ژاپنی</span>
-									</a>
-								</div>
-								<!--end::Menu item-->
-								<!--begin::Menu item-->
-								<div class="menu-item px-3">
-									<a href="#" class="menu-link d-flex px-5" data-kt-lang="فرانسه">
-										<span class="symbol symbol-20px me-4">
-											<img data-kt-element="lang-flag" class="rounded-1" src="{{ asset('assets/auth/media/flags/france.svg') }}" alt="" />
-										</span>
-										<span data-kt-element="lang-name">فرانسه</span>
-									</a>
-								</div>
-								<!--end::Menu item-->
-							</div>
-							<!--end::Menu-->
-						</div>
 						<!--end::زبانs-->
 						<!--begin::Links-->
-						<div class="d-flex fw-semibold text-primary fs-base gap-5">
-							<a href="pages/team.html" target="_blank">تیم ها</a>
-							<a href="pages/pricing/column.html" target="_blank">برنامه ریزی ها</a>
-							<a href="pages/contact.html" target="_blank">تماس با ما</a>
-						</div>
+
 						<!--end::Links-->
 					</div>
 					<!--end::Footer-->
@@ -242,10 +151,10 @@
 						<h1 class="d-none d-lg-block text-white fs-2qx fw-bolder text-center mb-7">سریع، کارآمد و محصولی</h1>
 						<!--end::Title-->
 						<!--begin::Text-->
-						<div class="d-none d-lg-block text-white fs-base text-center">در این نوع پست، 
-						<a href="#" class="opacity-75-hover text-warning fw-bold me-1">وبلاگر</a>فردی را که با او مصاحبه کرده اند معرفی می کند 
-						<br />و اطلاعات پس زمینه ای در مورد آن ارائه می دهد 
-						<a href="#" class="opacity-75-hover text-warning fw-bold me-1">مصاحبه شونده</a>and their 
+						<div class="d-none d-lg-block text-white fs-base text-center">در این نوع پست،
+						<a href="#" class="opacity-75-hover text-warning fw-bold me-1">وبلاگر</a>فردی را که با او مصاحبه کرده اند معرفی می کند
+						<br />و اطلاعات پس زمینه ای در مورد آن ارائه می دهد
+						<a href="#" class="opacity-75-hover text-warning fw-bold me-1">مصاحبه شونده</a>and their
 						<br />ویاک زیر این مصاحبه متنی است.</div>
 						<!--end::Text-->
 					</div>

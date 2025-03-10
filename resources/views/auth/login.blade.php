@@ -30,29 +30,10 @@
 								</div>
 								<!--begin::Heading-->
 								<!--begin::Login options-->
-								<div class="row g-3 mb-9">
-									<!--begin::Col-->
-									<div class="col-md-6">
-										<!--begin::گوگل link=-->
-										<a href="#" class="btn btn-flex btn-outline btn-text-gray-700 btn-active-color-primary bg-state-light flex-center text-nowrap w-100">
-										<img alt="Logo" src="{{ asset('assets/auth/media/svg/brand-logos/google-icon.svg') }}" class="h-15px me-3" />ورود از طریق گوگل</a>
-										<!--end::گوگل link=-->
-									</div>
-									<!--end::Col-->
-									<!--begin::Col-->
-									<div class="col-md-6">
-										<!--begin::گوگل link=-->
-										<a href="#" class="btn btn-flex btn-outline btn-text-gray-700 btn-active-color-primary bg-state-light flex-center text-nowrap w-100">
-										<img alt="Logo" src="{{ asset('assets/auth/media/svg/brand-logos/apple-black.svg') }}" class="theme-light-show h-15px me-3" />
-										<img alt="Logo" src="{{ asset('assets/auth/media/svg/brand-logos/apple-black-dark.svg') }}" class="theme-dark-show h-15px me-3" />با اپلیکیشن وارد شوید</a>
-										<!--end::گوگل link=-->
-									</div>
-									<!--end::Col-->
-								</div>
 								<!--end::Login options-->
 								<!--begin::separator-->
 								<div class="separator separator-content my-14">
-									<span class="w-125px text-gray-500 fw-semibold fs-7">یا با ایمیل</span>
+									<span class="w-125px text-gray-500 fw-semibold fs-7"> ایمیل</span>
 								</div>
 								<!--end::separator-->
 								<!--begin::Input group=-->
@@ -69,7 +50,7 @@
                                     <div> @error('password') {{$message}}@enderror</div>
                                     @if (session()->has('error'))
                                         <div>{{ session('error') }}</div>
-                                        
+
                                     @endif
                                     @if (session()->has('success'))
                                         <div> {{ session('success') }}</div>
@@ -81,7 +62,7 @@
 								<div class="d-flex flex-stack flex-wrap gap-3 fs-base fw-semibold mb-8">
 									<div></div>
 									<!--begin::Link-->
-									<a href="authentication/layouts/corporate/reset-password.html" class="link-primary">فراموشی رمز</a>
+									<a href="{{ route('forgetPasword') }}" class="link-primary">فراموشی رمز</a>
 									<!--end::Link-->
 								</div>
 								<!--end::Wrapper-->
@@ -92,15 +73,15 @@
 										<span class="indicator-label">ورود</span>
 										<!--end::Indicatیا label-->
 										<!--begin::Indicatیا progress-->
-										<span class="indicator-progress">لطفا صبر کنید... 
+										<span class="indicator-progress">لطفا صبر کنید...
 										<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
 										<!--end::Indicatیا progress-->
 									</button>
 								</div>
 								<!--end::ثبت button-->
 								<!--begin::ثبت نام-->
-								<div class="text-gray-500 text-center fw-semibold fs-6">آیا هنوز عضو نشده 
-								<a href="authentication/layouts/corporate/sign-up.html" class="link-primary">ثبت نام</a></div>
+								<div class="text-gray-500 text-center fw-semibold fs-6">آیا هنوز عضو نشده
+								<a href="{{ route('register') }}" class="link-primary">ثبت نام</a></div>
 								<!--end::ثبت نام-->
 							</form>
 							<!--end::form-->
@@ -113,13 +94,7 @@
 						<!--begin::زبانs-->
 						<div class="me-10">
 							<!--begin::Toggle-->
-							<button class="btn btn-flex btn-link btn-color-gray-700 btn-active-color-primary rotate fs-base" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" data-kt-menu-offset="0px, 0px">
-								<img data-kt-element="current-lang-flag" class="w-20px h-20px rounded me-3" src="{{ asset('assets/auth/media/flags/united-states.svg') }}" alt="" />
-								<span data-kt-element="current-lang-name" class="me-1">انگلیسی</span>
-								<span class="d-flex flex-center rotate-180">
-									<i class="ki-outline ki-down fs-5 text-muted m-0"></i>
-								</span>
-							</button>
+
 							<!--end::Toggle-->
 							<!--begin::Menu-->
 							<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold w-200px py-4 fs-7" data-kt-menu="true" id="kt_auth_lang_menu">
@@ -178,11 +153,6 @@
 						</div>
 						<!--end::زبانs-->
 						<!--begin::Links-->
-						<div class="d-flex fw-semibold text-primary fs-base gap-5">
-							<a href="pages/team.html" target="_blank">تیم ها</a>
-							<a href="pages/pricing/column.html" target="_blank">برنامه ریزی ها</a>
-							<a href="pages/contact.html" target="_blank">تماس با ما</a>
-						</div>
 						<!--end::Links-->
 					</div>
 					<!--end::Footer-->
@@ -204,10 +174,10 @@
 						<h1 class="d-none d-lg-block text-white fs-2qx fw-bolder text-center mb-7">سریع، کارآمد و محصولی</h1>
 						<!--end::Title-->
 						<!--begin::Text-->
-						<div class="d-none d-lg-block text-white fs-base text-center">در این نوع پست، 
-						<a href="#" class="opacity-75-hover text-warning fw-bold me-1">وبلاگر</a>فردی را که با او مصاحبه کرده اند معرفی می کند 
-						<br />و اطلاعات پس زمینه ای در مورد آن ارائه می دهد 
-						<a href="#" class="opacity-75-hover text-warning fw-bold me-1">مصاحبه شونده</a>and their 
+						<div class="d-none d-lg-block text-white fs-base text-center">در این نوع پست،
+						<a href="#" class="opacity-75-hover text-warning fw-bold me-1">وبلاگر</a>فردی را که با او مصاحبه کرده اند معرفی می کند
+						<br />و اطلاعات پس زمینه ای در مورد آن ارائه می دهد
+						<a href="#" class="opacity-75-hover text-warning fw-bold me-1">مصاحبه شونده</a>and their
 						<br />ویاک زیر این مصاحبه متنی است.</div>
 						<!--end::Text-->
 					</div>
